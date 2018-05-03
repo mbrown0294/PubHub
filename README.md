@@ -12,4 +12,4 @@ FLASK_APP=main.py flask run
 ## Required Work
 The project is incomplete, and therefore requires continued adjustments to ```db_fill.py``` and ```main.py``` (it cannot yet correctly return ```results.html``` with the provided information). 
 ### Unsolved Issues 
-*Inability to join and present the various (3) tables used to store information 
+* Inability to join and present the various (3) tables used to store information 
