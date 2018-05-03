@@ -3,7 +3,7 @@ Web app deisgned to give access to a database of published works, as well as all
 ## Setup
 All libraries in the ```requirements.txt``` should be  installed prior to running the application. Python v2.7 or higher is required, as well. Before running the app, first run ```db_creator.py``` and ```db_fill.py``` to initialize the database and fill it with the information provided in the ```endnote.txt```.
 ## Usage
-The provided .CSV file includes several published works and information on them. How a given .CSV file is ingested is controlled by the code in db_fill.py. 
+The provided ```endnote.txt``` file includes several published works and their accompanying information (columns are delimited by tabs; for works with multiple authors, the authors are delimited by "//"). How a given .txt or .csv file is ingested is controlled by the code in ```db_fill.py```. 
 
 In order to run the application and allow browser access, run the following terminal code:
 ```
