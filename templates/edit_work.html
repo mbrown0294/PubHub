@@ -1,0 +1,27 @@
+<!-- edit_work.html -->
+
+<doctype html>
+<title>Edit Publication - PubHub</title>
+<h2>Edit a Publication</h2>
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+	<dl>
+		{{ render_field(form.author) }}
+		{{ render_field(form.title) }}
+		<dt>{{ form.date.label }}
+		<dd>{{ form.date(pattern="(0[1-9]|1[012])/(0[1-9]|[12][0-9]|3[01])/(19|20)\d\d") }}
+		{% if form.date.errors %}
+			<ul class=errors>
+			{% for error in form.date.errors %} 
+				<li>{{ error }}</li>
+			{% endfor %}
+			</ul>
+			{% endif %}
+		</dd>
+	</dl>
+	<p><input type=submit value=Submit>
+
+<p><p>
+<a href="/">Back to the HomePage</a>
+</form>
+

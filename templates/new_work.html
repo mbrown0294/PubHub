@@ -1,0 +1,18 @@
+<!-- new_work.html -->
+
+<doctype html>
+<title>New Publicaion - PubHub Database </title>
+<h2>New Publication</h2>
+
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+	<dl>
+		{{ render_field(form.author) }}
+		{{ render_field(form.title) }}
+		{{ render_field(form.date) }}
+	</dl>
+	<p><input type=submit value=Submit>
+
+<p><p><p>
+<a href="/">Back to the HomePage</a>
+</form>

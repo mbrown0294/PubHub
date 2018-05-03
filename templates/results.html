@@ -1,0 +1,151 @@
+<!-- results.html -->
+
+<doctype html>
+<html>
+<head>
+	<title>PubHub - Search Results</title>
+	<link rel="stylesheet" href="../../../tablesorter-master/css/theme.default.css" />
+	<script src="../lib/python2.7/site-packages/werkzeug/debug/shared/jquery.js"></script>
+	<script src="../../tablesorter-master/dist/js/jquery.tablesorter.min.js"></script>	
+</head>
+
+
+<style>
+
+	a.button {
+		appearance: button;
+		-moz-appearance: button;
+		-webkit-appearance: button;
+	
+		width: 100px;
+		font-family: arial;		
+		text-decoration: none;
+		text-align: center;
+		padding: 2.5px 5px;
+		white-space: nowrap;
+	}
+
+	body {
+		text-align: center;
+	}
+
+	table {
+		font-family: arial;
+		font-size: 16px;
+		border: 1px solid black; 
+		border-radius: 15px;
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
+		/*width: 70%;*/
+		margin: auto;
+		border-collapse: separate !important;
+		border-spacing: 0px;
+		overflow: hidden;
+	}
+
+	th:first-child {
+		border-radius: 15px 0 0 0;
+		-moz-border-radius: 15px 0 0 0;
+		-webkit-border-radius: 15px 0 0 0;
+		background-color: #93a1e6;
+	}
+
+	th:last-child {
+		border-radius: 0 15px 0 0;
+		-moz-border-radius: 0 15px 0 0;
+		-webkit-border-radius: 0 15px 0 0;
+		background-color: #93a1e6;
+	}
+
+
+	th {
+		background-color: #93a1e6;
+		padding: 10px;
+	}
+
+	td {
+		padding: 10px 5px 10px 5px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+		
+	tr:nth-child(odd) {
+		background-color: #d6ddff;
+	}
+
+	tr:last-child td:last-child {
+		border-radius: 0 0 15px 0;
+		-moz-border-radius: 0 0 15px 0;
+		-webkit-border-radius: 0 0 15px 0;
+		
+	}
+
+	tr:last-child td:first-child {
+		border-radius: 0 0 0 15px;
+		-moz-border-radius: 0 0 0 15px;
+		-webkit-border-radius: 0 0 0 15px;
+	}	
+
+	#home {
+		position: fixed;
+		top: 10px;
+		left: 10px;
+	}
+
+	#table {
+		display: flex;
+		flex-direction: column;
+		width: 70%;
+		margin: auto;
+	}	
+
+	#title {
+		width: 100%;
+		height: 35px;
+		margin: auto 0 auto auto;
+		padding: 0;
+		
+		/*background-color: #ffffff;
+		border: 1px solid black;
+		border-radius: 5px;*/
+		
+		color: #f1f1f1;
+		text-align: left;
+		vertical-align: middle;
+		
+		font-size: 24px; 
+		font-weight: bold;
+		font-family: arial;
+		text-shadow: 0.5px 0.5px 0.5px #000,
+			-0.5px -0.5px 0.5px #000,
+			0.5px -0.5px 0.5px #000,
+			-0.5px 0.5px 0.5px #000,
+			0.5px 0 0.5px #000,
+			0 0.5px 0.5px #000,
+			-0.5px 0 0.5px #000,
+			0 -0.5px 0.5px #000;
+	
+	}
+
+</style>
+
+
+<body bgcolor="#fff3d6">
+	<div id="home">
+		<p><a href="/" class="button">&#8592;Back home</a>
+	</div>
+
+	<div id="table">
+		<div id="title">
+			Publications
+			<p><p><p>
+		</div>
+		
+		{{ table }}
+
+	</div>
+
+</body>
+</html>

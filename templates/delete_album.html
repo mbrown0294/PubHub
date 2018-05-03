@@ -1,0 +1,15 @@
+<!-- delete_work.html -->
+
+<doctype html>
+<title>Delete a Publication - PubHub Database</title>
+<h2>Delete a Publication</h2>
+
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+	<dl>
+		{{ render_field(form.author) }}
+		{{ render_field(form.title) }}
+		{{ render_field(form.date) }}
+	</dl>
+	<p><input type=submit value=Delete>
+</form>

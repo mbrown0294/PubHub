@@ -1,0 +1,265 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PubHub Publication Web page</title>
+</head>
+
+<style>
+
+	body {
+                font-family: arial;
+                font-size: 150%;
+	}
+
+	dl {
+		display: block;
+		width: 100%; 
+		text-align: center
+	}
+
+	td { 
+                font-size: 46px;
+                text-align: left;
+	}
+
+	/*submit and new button design*/
+	a.button, input[type="submit"] {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+                color: #1d1717;
+
+		width: 150px;
+		margin: auto;
+		padding: 10px 0;
+	
+		font-size: 18px;
+		font-family: arial;
+		text-align: center;
+                text-decoration: none;
+		vertical-align: middle;
+
+	}
+
+	/*full database button design*/
+	a.button2 {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+		display: block;
+		
+		width: 20%;
+		margin: auto 50px 0 auto;
+		padding: 5px 0;
+
+                font-size: 18px;
+		font-family: arial;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+	}
+
+	#all {
+		width: 40%;
+		margin: 50px auto auto auto;
+		border: 1px solid black;
+		border-collapse: collapse;
+                border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden; 
+		z-index: 2;
+	}
+
+	/*blue section, holds the rest*/
+	#body-section {
+		display: flex;
+		flex-direction: column;
+                width: 100%;
+                height: 600px;
+		padding: 10px 0 0 0;
+                background-color: #d6ddff;
+                font-family: arial;
+                text-align: left;
+		vertical-align: bottom;
+                margin: auto;
+	}
+
+	/*search and new buttons*/
+	#buttons {
+		width: 50%;
+		height: 50%;
+		display: flex;
+		text-align: center;
+		padding: 0 30px 0 0;
+		margin: auto;
+	}
+
+	/*full db button*/
+	#full {
+		width: 100%;
+		height: 20%;
+		padding: 100px 0 0 0;
+		background-color: #ffffff;
+		display: block;
+		border-radius: 0 0 0 15px;
+		margin: 0 auto;
+		vertical-align: bottom;
+		text-align: center;
+		z-index: 2;
+	}
+	
+	/*white section, holding table w/ logo and title*/
+	#logo {
+		position: absolute;
+		right: 20px;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	/*white section, inside body-section, contains the rest*/
+	#main {
+		width: 100%;
+		height: 60%;
+		margin: 0 auto 0 auto;
+		border: 1px solid black;
+		border-width: 1px 0 0 0; 
+		display: inline-block;
+		background-color: #ffffff;
+		text-align: center;
+		padding: 25px 0 0 0;
+		z-index: 1;
+	}
+
+	/*style for the select and search fields*/
+	#rendered {
+		display: flex;
+		text-align: center;
+		height: 50px;
+		width: 100%;
+		margin: auto;
+	}
+
+	/*the search field*/
+	#search {
+		display: inline;
+		text-align: left;
+		width: 175%;
+		height: 80%;
+		border-radius: 5px;
+		margin: auto 0 auto 10px;
+		padding: 0 0 0 5px;
+	}
+
+	#search-flash {
+		width: 100%;
+		padding: 0 0 0 84px;
+		text-align: left;
+	}
+
+	/*the select field*/
+	#select {
+		display:inline;
+		width: 80%;
+		height: 80%;
+		margin: auto 50px auto 50px;
+	}
+
+	#text {
+		height: 20%;
+		font-weight: bold;
+		font-size: 40px;
+		color: #ffffff;
+		vertical-align: middle;
+		text-align: center;
+		text-shadow: 1px 1px 0.5px #000000,
+			-1px 1px 0.5px #000000,
+			-1px 0 #000000,
+			0 1px #000000,
+			1px 0 #000000,
+			0 -1px #000000,
+			1px -1px 0.5px #000000,
+			-1px -1px 0.5px #000000;
+	}
+
+	/*table organizing logo and title, within top-section*/
+	#title-table {
+                width: 50%;
+                border: 1px solid black;
+                border-radius: 50px;
+                margin: auto;
+                background-color: #ffffff;
+                font-family: arial;
+	}
+
+</style>
+
+<body bgcolor="#fff3d6">
+	
+	<!-- the title and logo -->
+	<div id="logo">
+		<img id="logo2" src="https://assets.themuse.com/uploaded/companies/711/small_logo.png?v=None" alt="Johns Hopkins APL Logo" height="100" width="300"/>
+	</div>
+
+	<p><p>
+
+	<!-- wraps body-section -->
+	<div id="all">
+	<!-- background section (blue) -->
+	<div id="body-section">
+		<div id="text">
+			<p>Publications</p>
+		</div>
+		
+		<!-- main section (white) -->
+		<div id="main">		
+
+			<div id="search-flash">
+
+				<p><b><u>Search:</u></b></p>
+	
+				<!-- gives errors -->
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<ul class=flashes>
+					{% for message in messages %}
+						<li>{{ message }} </li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% endwith %}
+				{% from "_formhelpers.html" import render_field %}
+				<!-- renders select/search -->
+				<form method=post>
+			</div> <!-- search-flash -->
+
+				<dl>
+					<div id="rendered">
+						{{ render_field(form.select) }}
+						{{ render_field(form.search) }}
+					</div> <!-- rendered -->
+
+						<p><p><p><p><p>
+					
+					<div id="buttons">
+						<br><input type=submit value=Search>
+						<a href="{{ url_for('.new_work') }}" class="button">New Work</a>
+					</div> <!-- buttons -->
+
+				</dl>
+			
+			</form>
+		</div> <!-- main -->
+			
+		<div id="full">
+			<a href="{{ url_for('.full') }}" class="button2"><b>Full Database</b></a>
+		</div> <!-- full -->
+
+	</div> <!-- body-section -->
+
+	</div> <!-- all -->
+</body>
+
+</html>

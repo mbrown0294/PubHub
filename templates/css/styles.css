@@ -1,0 +1,60 @@
+/* styles.css */
+
+a.button {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+
+                font-size: 14px;
+
+                text-decoration: none;
+                color: initial;
+}
+
+body {
+                font-family: arial;
+                font-size: 150%;
+}
+
+#top-section {
+                text-align: center;
+                background-color: #fff3d6;
+                font-family: arial;
+}
+
+#title-table {
+                width: 50%;
+                border: 1px solid black;
+                border-radius: 50px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                font-family: arial;
+}
+
+td { 
+                font-size: 46px;
+                text-align: left;
+}
+
+#logo {
+                border-radius: 50px;
+}
+        
+#body-section {
+                width: 60%;
+                height: 500px;
+                padding: 25px;
+                display: block;
+                background-color: #d6ddff;
+                font-family: arial;
+                text-align: left;
+                border-radius: 0px;
+                margin: 0 auto;
+}
+
+search {
+                width: 40%;
+                padding: 15px 25px 15px 25px;
+                background-color: #ffffff;
+                border: 1px solid black;
+}
